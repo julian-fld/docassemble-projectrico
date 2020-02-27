@@ -1,0 +1,54 @@
+---
+question: Hello!
+attachment:
+  name: Arbeidsovereenkomst tussen ${ naam_werknemer } en Fornier Legal Design
+  filename: arbeidsovereenkomst
+  docx template file: fld_arbeidsovereenkomst.docx
+buttons:
+  - Exit: exit
+mandatory: True
+---
+question: |
+  Vul onderstaande gegevens in over de nieuwe werknemer
+fields:
+  - Naam: naam_werknemer
+  - Straat en huisnummer: adres1_werknemer
+  - Postcode en woonplaats: adres2_werknemer
+  - Datum overeenkomst: datum_tekenen
+    datatype: date
+---
+question: |
+  Vul onderstaande gegevens in over de werkzaamheden van ${ naam_werknemer }
+fields:
+  - Rol: rol
+  - Startdatum: start_datum
+    datatype: date
+  - Einddatum: eind_datum
+    datatype: date
+  - Parttime of fulltime: parttime_fulltime
+    choices:
+      - Parttime: parttime
+      - Fulltime: fulltime
+  - Soort dienstverband: on_bepaald
+    choices:
+      - Onbepaalde tijd: onbepaalde tijd
+      - Bepaalde tijd: bepaalde tijd
+---
+question: |
+  Vul onderstaande gegevens in over de werkzaamheden van ${ naam_werknemer }
+fields:
+  - Salaris: bruto_salaris
+    datatype: currency
+    min: 0
+    currency symbol: €
+  - Aantal dagen per week: dagen
+    datatype: number
+    min: 0
+    max: 7
+  - Aantal uur per week: uren
+    datatype: number
+    min: 0
+    max: 40
+  - Aantal vakantiedagen: vakantiedagen
+    datatype: number
+    min: 0
